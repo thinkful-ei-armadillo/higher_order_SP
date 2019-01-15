@@ -1,5 +1,5 @@
 'use strict';
-
+//drill 1
 const repeat = (fn, n) => {
   for (let i = 0; i < n; i++) {
     fn();
@@ -17,6 +17,7 @@ const goodbye = () => {
 repeat(hello, 5);
 repeat(goodbye, 5);
 
+//drill 2
 function filter(arr, fn) {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
@@ -44,6 +45,7 @@ const filteredNames = filter(myNames, function(name) {
 console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
+//drill 3
 const hazardWarningCreator = typeOfWarning => {
   let warningCounter = 0;
   return location => {
@@ -74,10 +76,11 @@ rockWarning('42nd Street');
 planeWarning('42nd Street');
 lizardWarning('42nd Street');
 
-const originalArr= [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+//drill 4
+const originalArr = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
 let filteredArr = originalArr.filter(element => {
- return element[0] >= 0  && element[1] >= 0;
+  return element[0] >= 0 && element[1] >= 0;
 });
 
 let mappedArr = filteredArr.map(element => {
@@ -87,6 +90,22 @@ let mappedArr = filteredArr.map(element => {
 let totalSteps = 0;
 
 mappedArr.forEach(element => {
- totalSteps += element;
+  totalSteps += element;
 });
 console.log(`The turtle took ${totalSteps} steps.`);
+
+//drill 5
+
+const reduceWords = input => {
+  const inputArr = input.split(' ');
+  return inputArr.reduce((total, element) => {
+    return (
+      total +
+      (element.length === 3 ? ' ' : element[element.length - 1].toUpperCase())
+    );
+  }, '');
+};
+
+const words =
+  'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+console.log(reduceWords(words));
