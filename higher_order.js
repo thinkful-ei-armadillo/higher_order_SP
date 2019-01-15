@@ -73,3 +73,20 @@ lizardWarning('Georgia Ave');
 rockWarning('42nd Street');
 planeWarning('42nd Street');
 lizardWarning('42nd Street');
+
+const originalArr= [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+let filteredArr = originalArr.filter(element => {
+ return element[0] >= 0  && element[1] >= 0;
+});
+
+let mappedArr = filteredArr.map(element => {
+  return element[0] + element[1];
+});
+
+let totalSteps = 0;
+
+mappedArr.forEach(element => {
+ totalSteps += element;
+});
+console.log(`The turtle took ${totalSteps} steps.`);
